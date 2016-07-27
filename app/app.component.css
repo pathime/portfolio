@@ -1,0 +1,43 @@
+body {
+    color: #c2c7b1;
+}
+
+.container {
+    width: calc(160px * 4);
+    height: 100%;
+    margin-left: 160px;
+    padding: 0 22px;
+    box-sizing: border-box;
+    background: #6e6b75;
+    position: fixed;
+    top: 0;
+    overflow: scroll;
+}
+
+.content {
+    float: left;
+    margin: 16px 0;
+}
+
+h3 {
+    background: rgba(50, 43, 66, 0.54);
+    padding: 5px 10px;
+    display: inline-block;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    margin: 0 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #c2c7b1;
+}

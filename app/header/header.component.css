@@ -1,0 +1,25 @@
+h1 {
+    font-size: 90px;
+    margin: 0 -6px;
+    color: #c2c7b1;
+}
+
+h2 {
+    color: #c2c7b1;
+    margin: -15px 0 0;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+nav {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    color: #c2c7b1;
+    margin: 5px 0;
+    padding: 2px 0 3px;
+}
+
+a {
+    margin-right: 28px;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,15 @@
+a.back {
+    float: right;
+    margin-right: 0;
+}
+
+a {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    padding: 1px 6px 3px;
+    border: 2px solid #c2c7b1;
+}
+
+p.disclaimer {
+    font-weight: 700;
+}

@@ -1,0 +1,17 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin: 0 0 16px;
+}
+
+li h3 {
+    cursor: pointer;
+}
+
+li p {
+    margin: 0;
+}
