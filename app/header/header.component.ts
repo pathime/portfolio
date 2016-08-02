@@ -1,7 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { WallpaperService } from '../wallpaper/wallpaper.service';
-
 
 @Component({
     selector: 'page-header',
@@ -14,15 +12,10 @@ import { WallpaperService } from '../wallpaper/wallpaper.service';
 
 export class PageHeaderComponent implements OnInit {
 
-    constructor(private wallpaperService: WallpaperService) { }
+    constructor() { }
 
     ngOnInit() {
 
     }
-
-    public updateWallpaper() {
-        this.wallpaperService.updateInitialData();
-    }
-
 
  }

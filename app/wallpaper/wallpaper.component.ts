@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 import { WallpaperService } from './wallpaper.service';
 import { Shape } from './wallpaper.service';
 import { Box } from './wallpaper.service';
@@ -8,7 +9,6 @@ import { Box } from './wallpaper.service';
     template: `
         <canvas id="canvas" 
         (mousemove)="animate($event)" 
-        (click)="handleClick()" 
         [width]="screenWidth" 
         [height]="screenHeight"></canvas>`,
     styles: [`
@@ -21,13 +21,14 @@ import { Box } from './wallpaper.service';
 
 export class WallpaperComponent implements OnInit {
 
-    constructor(private elementRef: ElementRef, private wallpaperService: WallpaperService ) { }
+    constructor(private elementRef: ElementRef, private wallpaperService: WallpaperService, private router: Router) {}
 
     private canvas: any;
     private ctx: any;
     private boxesX: number;
     private initialData = this.wallpaperService.initialData;
     private boxWidth = this.wallpaperService.boxWidth;
+    private initialLoad: boolean = true;
 
     public screenWidth: number;
     public screenHeight: number;
@@ -40,6 +41,14 @@ export class WallpaperComponent implements OnInit {
         this.boxesX = Math.ceil(this.screenWidth / (this.boxWidth * 4));
         this.wallpaperService.generateInitialData(this.screenWidth, this.screenHeight);
         this.draw();
+        this.router.events.subscribe((event) => {
+            if (event instanceof NavigationStart) {
+                if (!this.initialLoad) 
+                    this.wallpaperService.updateInitialData();
+                else 
+                    this.initialLoad = false;
+            } 
+        });
     }
 
     public animate(e: MouseEvent) {
@@ -51,10 +60,6 @@ export class WallpaperComponent implements OnInit {
             if (e.clientX > shape.offsetX && e.clientX < shape.offsetX + shape.width && e.clientY > shape.offsetY && e.clientY < shape.offsetY + shape.width)
                 box.animate = true;
         }
-    }
-
-    public handleClick() {
-        this.wallpaperService.updateInitialData();
     }
 
     private draw() {
