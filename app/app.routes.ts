@@ -4,7 +4,7 @@ import { ProjectComponent } from './project/project.component';
 import { AboutMeComponent } from './aboutme/aboutme.component';
 
 const routes: RouterConfig = [
-  { path: '', component: ProjectListComponent },
+  { path: '', component: AboutMeComponent },
   { path: 'about', component: AboutMeComponent },
   { path: 'projects', component: ProjectListComponent },
   { path: 'project/:slug', component: ProjectComponent }
