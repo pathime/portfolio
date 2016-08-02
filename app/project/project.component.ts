@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { PROJECTS } from "../project-list/projects";
 
@@ -22,7 +22,7 @@ export interface Project {
         ]
 })
 
-export class ProjectComponent implements OnInit {
+export class ProjectComponent implements OnInit, OnDestroy {
 
     private sub: any;
     private projects = PROJECTS;
@@ -37,4 +37,7 @@ export class ProjectComponent implements OnInit {
         });
     }
 
+    ngOnDestroy() {
+        this.sub.unsubscribe();
+    }
  }
