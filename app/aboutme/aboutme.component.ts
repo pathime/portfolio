@@ -5,7 +5,12 @@ import { Component, OnInit, ElementRef } from '@angular/core';
     templateUrl: './app/aboutme/aboutme.component.html',
     styleUrls: [
         './app/app.component.css'
-        ]
+        ],
+    styles: [`
+        a {
+            font-weight: 700;
+        }
+    `]
 })
 
 export class AboutMeComponent implements OnInit {
