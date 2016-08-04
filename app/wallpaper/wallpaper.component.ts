@@ -34,6 +34,7 @@ export class WallpaperComponent implements OnInit {
     public screenHeight: number;
 
     ngOnInit() {
+        if (window.innerWidth <= 640) return;
         this.canvas = document.getElementById('canvas');
         this.ctx = this.canvas.getContext('2d');
         this.screenWidth = window.innerWidth - 16;

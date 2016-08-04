@@ -23,3 +23,12 @@ a {
     margin-right: 28px;
     letter-spacing: 1px;
 }
+
+@media all and (max-width: 400px) {
+    h1 {
+        font-size: 70px;
+    }
+    a {
+        margin-right: 23px;
+    }
+}

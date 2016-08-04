@@ -41,3 +41,18 @@ a {
     text-decoration: none;
     color: #c2c7b1;
 }
+
+@media all and (max-width: 960px) {
+    .container {
+        margin-left: -320px;
+        left: 50%;
+    } 
+}
+
+@media all and (max-width: 640px) {
+    .container {
+        margin: 0;
+        left: 0;
+        width: 100%;
+    } 
+}
